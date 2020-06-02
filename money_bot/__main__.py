@@ -16,4 +16,15 @@ async def on_shutdown(*args):
 
 
 if __name__ == '__main__':
+    sentry_dsn = env.get('SENTRY_DSN', '')
+    release = env.get('RELEASE', '')
+    if sentry_dsn:
+        try:
+            import sentry_sdk
+            from sentry_sdk.integrations.aiohttp import AioHttpIntegration
+
+            sentry_sdk.init(sentry_dsn, release=release, integrations=[AioHttpIntegration()])
+        except Exception:
+            pass
+
     executor.start_polling(dp, on_startup=on_startup, on_shutdown=on_shutdown)

@@ -6,7 +6,7 @@ PyPika~=0.37.7
 pytz~=2020.1
 sentry-sdk~=0.14.4
 tortoise-orm~=0.16.12
-aiodns==2.0.0
-cchardet==2.1.6
-ujson==2.0.3
-uvloop==0.14.0
+aiodns~=2.0.0
+cchardet~=2.1.6
+ujson~=2.0.3
+uvloop~=0.14.0
